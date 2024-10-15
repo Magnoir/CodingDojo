@@ -5,6 +5,8 @@
   "dependencies": {
     "@material-ui/core": "^4.9.2",
     "@material-ui/icons": "^4.9.1",
+    "@sentry/cli": "^2.37.0",
+    "@sentry/react": "^8.34.0",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
@@ -27,11 +29,12 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && npm run sentry:sourcemaps",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint src --max-warnings=0",
-    "bootstrap": "node ./bootstrap-fauna-database.js"
+    "bootstrap": "node ./bootstrap-fauna-database.js",
+    "sentry:sourcemaps": "sentry-cli sourcemaps inject --org magnoir --project javascript-react ./build && sentry-cli sourcemaps upload --org magnoir --project javascript-react ./build"
   },
   "eslintConfig": {
     "extends": "react-app"

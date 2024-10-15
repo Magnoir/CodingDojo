@@ -7,6 +7,7 @@ const App = () => {
     <div className="App">
       <CalculatorPage />
     </div>
+    <button onClick={() => methodDoesNotExist()}>Break the world</button>;
   );
 };
 
