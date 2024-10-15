@@ -36,6 +36,7 @@ jobs:
       - run: npm run build
 
 workflows:
-  node-tests:
+  push:
+    unless: << pipeline.parameters.pull_request >>
     jobs:
       - build-test
