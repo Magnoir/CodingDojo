@@ -29,12 +29,11 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build && npm run sentry:sourcemaps",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint src --max-warnings=0",
-    "bootstrap": "node ./bootstrap-fauna-database.js",
-    "sentry:sourcemaps": "sentry-cli sourcemaps inject --org magnoir --project javascript-react ./build && sentry-cli sourcemaps upload --org magnoir --project javascript-react ./build"
+    "bootstrap": "node ./bootstrap-fauna-database.js"
   },
   "eslintConfig": {
     "extends": "react-app"
