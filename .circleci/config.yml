@@ -12,8 +12,8 @@ jobs:
           name: "Check if build is a pull request"
           command: |
             if [ -z "${CIRCLE_PULL_REQUEST}" ]; then
-              echo "Not a pull request, exiting"
-              circleci-agent step halt
+              echo "Not a pull request, failing the build"
+              exit 1
             else
               echo "This is a pull request, proceeding with the workflow"
             fi
