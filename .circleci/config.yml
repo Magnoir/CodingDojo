@@ -7,17 +7,6 @@ jobs:
     steps:
       - checkout
 
-      # Exit early if not a pull request
-      - run:
-          name: "Check if build is a pull request"
-          command: |
-            if [ -z "${CIRCLE_PULL_REQUEST}" ]; then
-              echo "Not a pull request, exiting"
-              circleci-agent step halt
-            else
-              echo "This is a pull request, proceeding with the workflow"
-            fi
-
       # Download and cache dependencies
       - restore_cache:
           keys:
